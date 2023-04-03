@@ -60,7 +60,6 @@ public class StudentDAOImpl implements StudentDataAccessObject {
     @Override
     @Transactional
     public int deleteAll() {
-        // return number of rows deleted
         return entityManager.createQuery("DELETE FROM Student").executeUpdate();
     }
 

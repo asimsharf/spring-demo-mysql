@@ -2,8 +2,6 @@ package com.example.demo.DataAccessObject;
 import com.example.demo.entity.Student;
 
 import java.util.List;
-// StudentDataAccessObject
-// StudentDataAccessObjectImplementation
 
 public interface StudentDataAccessObject {
     void save(Student theStudent);

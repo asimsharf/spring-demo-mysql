@@ -20,12 +20,12 @@ public class DemoApplication {
 	public CommandLineRunner commandLineRunner(StudentDataAccessObject studentDataAccessObject){
 		return runner -> {
 			createStudent(studentDataAccessObject);
-//			queryForStudents(studentDAO);
-//			readStudent(studentDAO);
-//			updateStudent(studentDAO);
-//			queryStudentLastName(studentDAO);
-//			deleteStudent(studentDAO);
-//			deleteAllStudent(studentDAO);
+//			queryForStudents(studentDataAccessObject);
+//			readStudent(studentDataAccessObject);
+//			updateStudent(studentDataAccessObject);
+//			queryStudentLastName(studentDataAccessObject);
+//			deleteStudent(studentDataAccessObject);
+//			deleteAllStudent(studentDataAccessObject);
 		};
 	}
 
@@ -35,54 +35,40 @@ public class DemoApplication {
 	}
 
 	private void updateStudent(StudentDataAccessObject studentDataAccessObject) {
-		int theID = 6;
+		int theID = 1;
 		Student tempStudent = studentDataAccessObject.findById(theID);
-		System.out.println("Student Before Update: " + tempStudent);
 		tempStudent.setFirstName("Asim");
 		tempStudent.setLastName("Abdelgadir");
 		tempStudent.setEmail("aa@gmail.com");
-		System.out.println("Student After Update: " + tempStudent);
 		studentDataAccessObject.update(tempStudent);
-		System.out.println("Student After Update: " + studentDataAccessObject.findById(theID));
 	}
 
 	private void queryStudentLastName(StudentDataAccessObject studentDataAccessObject) {
-		System.out.println("Query Student Last Name: ");
 		List<Student> theStudent = studentDataAccessObject.findByLastName("Abdelgadir");
-		System.out.println("Query Student Last Name: " + theStudent);
 		for (Student tempStudent: theStudent){
 			System.out.println("Query Student Last Name: " + tempStudent);
 		}
 	}
 
 	private void queryForStudents(StudentDataAccessObject studentDataAccessObject) {
-		System.out.println("Query For Students: ");
 		List<Student> theStudents = studentDataAccessObject.findAll();
-
-		System.out.println("Query For Students: " + theStudents);
 		for (Student student: theStudents){
 			System.out.println(student);
 		}
 	}
 
 	private void readStudent(StudentDataAccessObject studentDataAccessObject) {
-		System.out.println("Read Student: ");
-		int theID = 6;
-		System.out.println("Read Student: " + studentDataAccessObject.findById(theID));
+		int theID = 1;
 		System.out.println(studentDataAccessObject.findById(theID));
 	}
 
 	private void createStudent(StudentDataAccessObject studentDataAccessObject){
-		System.out.println("Create Student: ");
 		Student tempStudent = new Student("Esam", "Mohamed", "asimsharf@gmail.com");
-		System.out.println("Create Student: " + tempStudent);
 		studentDataAccessObject.save(tempStudent);
 	}
 
 	private void deleteStudent(StudentDataAccessObject studentDataAccessObject){
-		System.out.println("Delete Student: ");
-		int theID = 3;
-		System.out.println("Delete Student: " + studentDataAccessObject.findById(theID));
+		int theID = 1;
 		studentDataAccessObject.delete(theID);
 	}
 
