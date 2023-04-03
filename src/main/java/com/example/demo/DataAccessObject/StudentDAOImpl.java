@@ -1,4 +1,4 @@
-package com.example.demo.dao;
+package com.example.demo.DataAccessObject;
 
 import com.example.demo.entity.Student;
 import jakarta.persistence.EntityManager;
@@ -10,8 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-public class StudentDAOImpl implements StudentDAO {
-    // DAO: Data Access Object
+public class StudentDAOImpl implements StudentDataAccessObject {
     private final EntityManager entityManager;
     @Autowired
     public StudentDAOImpl(EntityManager entityManager) {

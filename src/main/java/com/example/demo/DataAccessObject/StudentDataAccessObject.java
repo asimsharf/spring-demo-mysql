@@ -1,11 +1,11 @@
-package com.example.demo.dao;
+package com.example.demo.DataAccessObject;
 import com.example.demo.entity.Student;
 
 import java.util.List;
 // StudentDataAccessObject
 // StudentDataAccessObjectImplementation
 
-public interface StudentDAO {
+public interface StudentDataAccessObject {
     void save(Student theStudent);
 
     Student findById(Integer id);
